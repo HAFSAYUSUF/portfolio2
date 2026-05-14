@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hafsa Y | Portfolio</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+            background:linear-gradient(135deg,#14001f,#2b0040,#14001f);
+            color:white;
+            overflow-x:hidden;
+        }
+
+        /* HERO SECTION */
+
+        .hero{
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            gap:50px;
+
+            padding:60px 10%;
+
+            flex-wrap:wrap;
+
+            background:rgba(20,0,31,0.8);
+
+            backdrop-filter:blur(10px);
+
+            border-bottom:1px solid rgba(255,255,255,0.1);
+
+        }
+
+        .hero-content{
+
+            max-width:600px;
+
+        }
+
+        .profile-pic{
+
+            width:180px;
+
+            height:180px;
+
+            border-radius:50%;
+
+            object-fit:cover;
+
+            border:4px solid #c084fc;
+
+            box-shadow:0 0 25px rgba(192,132,252,0.7);
+
+            transition:0.4s;
+
+        }
+
+        .profile-pic:hover{
+
+            transform:scale(1.05);
+
+        }
+
+        .hero-content h1{
+
+            font-size:3rem;
+
+            background:linear-gradient(90deg,#c084fc,#f472b6,#60a5fa);
+
+            -webkit-background-clip:text;
+
+            -webkit-text-fill-color:transparent;
+
+            margin-bottom:15px;
+
+        }
+
+        .hero-content p{
+
+            margin-bottom:15px;
+
+            line-height:1.7;
+
+            color:#f3e8ff;
+
+        }
+
+        /* NAVIGATION */
+
+        nav{
+
+            display:flex;
+
+            flex-wrap:wrap;
+
+            gap:20px;
+
+            margin-top:20px;
+
+        }
+
+        nav a{
+
+            color:white;
+
+            text-decoration:none;
+
+            font-weight:bold;
+
+            position:relative;
+
+            transition:0.3s;
+
+        }
+
+        nav a::after{
+
+            content:"";
+
+            position:absolute;
+
+            width:0%;
+
+            height:2px;
+
+            background:#c084fc;
+
+            left:0;
+
+            bottom:-5px;
+
+            transition:0.3s;
+
+        }
+
+        nav a:hover::after{
+
+            width:100%;
+
+        }
+
+        nav a:hover{
+
+            color:#c084fc;
+
+        }
+
+        /* RESUME BUTTON */
+
+        .resume-btn{
+
+            display:inline-block;
+
+            margin-top:10px;
+
+            padding:12px 24px;
+
+            border-radius:30px;
+
+            background:#a855f7;
+
+            color:white;
+
+            text-decoration:none;
+
+            font-weight:bold;
+
+            transition:0.3s;
+
+        }
+
+        .resume-btn:hover{
+
+            background:#c084fc;
+
+            transform:scale(1.05);
+
+        }
+
+        /* SECTION */
+
+        section{
+
+            max-width:1100px;
+
+            margin:60px auto;
+
+            padding:35px;
+
+            background:rgba(255,255,255,0.05);
+
+            border-radius:20px;
+
+            backdrop-filter:blur(10px);
+
+            box-shadow:0 0 20px rgba(168,85,247,0.2);
+
+        }
+
+        section h2{
+
+            text-align:center;
+
+            margin-bottom:30px;
+
+            color:#d8b4fe;
+
+            font-size:2.2rem;
+
+        }
+
+        /* ABOUT */
+
+        .about p{
+
+            font-size:1.1rem;
+
+            line-height:1.8;
+
+            text-align:center;
+
+            color:#f3e8ff;
+
+        }
+
+        /* SKILLS */
+
+        .skills-container{
+
+            display:flex;
+
+            flex-wrap:wrap;
+
+            justify-content:center;
+
+            gap:15px;
+
+        }
+
+        .skill{
+
+            padding:12px 24px;
+
+            border-radius:30px;
+
+            background:rgba(255,255,255,0.08);
+
+            transition:0.3s;
+
+            font-weight:bold;
+
+            color:#e9d5ff;
+
+        }
+
+        .skill:hover{
+
+            background:#a855f7;
+
+            transform:translateY(-5px);
+
+        }
+
+        /* PROJECTS */
+
+        .projects-grid{
+
+            display:grid;
+
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+            gap:25px;
+
+        }
+
+        .project-card{
+
+            background:rgba(255,255,255,0.07);
+
+            padding:25px;
+
+            border-radius:18px;
+
+            transition:0.4s;
+
+            cursor:pointer;
+
+        }
+
+        .project-card:hover{
+
+            transform:translateY(-10px) scale(1.03);
+
+            box-shadow:0 0 25px rgba(192,132,252,0.5);
+
+        }
+
+        .project-card h3{
+
+            color:#c084fc;
+
+            margin-bottom:15px;
+
+        }
+
+        .project-card p{
+
+            color:#f3e8ff;
+
+            line-height:1.6;
+
+        }
+
+        /* EXPERIENCE */
+
+        .experience-card{
+
+            background:rgba(255,255,255,0.06);
+
+            padding:25px;
+
+            border-radius:15px;
+
+            margin-bottom:20px;
+
+            transition:0.3s;
+
+        }
+
+        .experience-card:hover{
+
+            transform:translateX(10px);
+
+        }
+
+        .experience-card h3{
+
+            color:#c084fc;
+
+            margin-bottom:10px;
+
+        }
+
+        /* ACHIEVEMENTS */
+
+        .achievement{
+
+            background:rgba(255,255,255,0.06);
+
+            padding:20px;
+
+            border-radius:15px;
+
+            margin-bottom:15px;
+
+            transition:0.3s;
+
+        }
+
+        .achievement:hover{
+
+            background:rgba(168,85,247,0.2);
+
+        }
+
+        /* CONTACT */
+
+        .contact{
+
+            text-align:center;
+
+        }
+
+        .contact p{
+
+            margin:15px 0;
+
+            font-size:1.1rem;
+
+        }
+
+        .contact a{
+
+            color:#c084fc;
+
+            text-decoration:none;
+
+        }
+
+        .contact a:hover{
+
+            color:#ffffff;
+
+        }
+
+        /* FOOTER */
+
+        footer{
+
+            text-align:center;
+
+            padding:20px;
+
+            margin-top:40px;
+
+            background:#0f0017;
+
+            color:#999;
+
+        }
+
+        /* FADE ANIMATION */
+
+        .fade{
+
+            opacity:0;
+
+            transform:translateY(40px);
+
+            transition:1s;
+
+        }
+
+        .fade.show{
+
+            opacity:1;
+
+            transform:translateY(0);
+
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            .hero{
+
+                text-align:center;
+
+            }
+
+            .hero-content h1{
+
+                font-size:2.3rem;
+
+            }
+
+            nav{
+
+                justify-content:center;
+
+            }
+
+            section{
+
+                margin:30px 15px;
+
+                padding:25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+
+    <header class="hero">
+
+        <div class="hero-image">
+
+            <img src="Hafsa.png" alt="Hafsa Y" class="profile-pic">
+
+        </div>
+
+        <div class="hero-content">
+
+            <h1>Hafsa Y</h1>
+
+            <p>
+                ECE Undergraduate | AI/ML Enthusiast | Python Developer
+            </p>
+
+            <p>
+                I am an ECE undergraduate at NSS College of Engineering with strong interests in
+                Artificial Intelligence, Federated Learning, IoT, Android Development,
+                and Software Development.
+            </p>
+
+            <a href="Hafsa_resume.pdf" download class="resume-btn">
+                Download Resume
+            </a>
+
+            <nav>
+
+                <a href="#about">About</a>
+
+                <a href="#skills">Skills</a>
+
+                <a href="#projects">Projects</a>
+
+                <a href="#experience">Experience</a>
+
+                <a href="#achievements">Achievements</a>
+
+                <a href="#contact">Contact</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ABOUT -->
+
+    <section id="about" class="about fade">
+
+        <h2>About Me</h2>
+
+        <p>
+            Passionate about AI, Machine Learning, Federated Learning,
+            Android Development, IoT, and building intelligent software systems.
+            I enjoy solving real-world problems through technology and research.
+        </p>
+
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills" class="fade">
+
+        <h2>Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill">Python</div>
+
+            <div class="skill">C Programming</div>
+
+            <div class="skill">HTML</div>
+
+            <div class="skill">CSS</div>
+
+            <div class="skill">Kotlin</div>
+
+            <div class="skill">SQL</div>
+
+            <div class="skill">PyTorch</div>
+
+            <div class="skill">Machine Learning</div>
+
+            <div class="skill">Federated Learning</div>
+
+            <div class="skill">Streamlit</div>
+
+            <div class="skill">IoT</div>
+
+            <div class="skill">Jetpack Compose</div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects" class="fade">
+
+        <h2>Projects</h2>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <h3>KTU Study Assistant</h3>
+
+                <p>
+                    AI-powered academic assistant with chatbot tutor,
+                    quiz generator, SGPA calculator, note summarizer,
+                    and PYQ finder using Gemini API.
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <h3>TAMGAN S11 Prediction Model</h3>
+
+                <p>
+                    Deep learning model for slotted patch antenna
+                    S11 prediction using PyTorch and GAN architecture.
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <h3>EduTrack App</h3>
+
+                <p>
+                    Android attendance tracking application built
+                    using Kotlin and Jetpack Compose.
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <h3>Smart Pet Feeder</h3>
+
+                <p>
+                    IoT-based smart pet feeder using ESP32
+                    and voice module integration.
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <h3>Wine Quality Classifier</h3>
+
+                <p>
+                    Machine learning model using Random Forest
+                    for wine quality prediction.
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <h3>Retail Store Database</h3>
+
+                <p>
+                    SQL and MySQL based database system
+                    with CRUD operations and optimized queries.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience" class="fade">
+
+        <h2>Experience</h2>
+
+        <div class="experience-card">
+
+            <h3>SQL Intern — Codetech IT Solutions</h3>
+
+            <p>
+                Optimized SQL queries, improved backend schema performance,
+                and generated analytics reports.
+            </p>
+
+        </div>
+
+        <div class="experience-card">
+
+            <h3>Data Science Intern — Corizo</h3>
+
+            <p>
+                Worked on data cleaning, visualization,
+                and predictive machine learning models.
+            </p>
+
+        </div>
+
+        <div class="experience-card">
+
+            <h3>Research Fellow — IIST</h3>
+
+            <p>
+                Developed privacy-preserving federated learning framework
+                for IoT wearables using differential privacy.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+
+    <section id="achievements" class="fade">
+
+        <h2>Achievements</h2>
+
+        <div class="achievement">
+            Selected for IASc-INSA-NASI Summer Research Fellowship 2025
+        </div>
+
+        <div class="achievement">
+            Selected for Fluxus Hackathon IIT Indore 2025
+        </div>
+
+        <div class="achievement">
+            Finalist at Startup Space E-Summit 2025
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact fade">
+
+        <h2>Contact</h2>
+
+        <p>
+            Email:
+            <a href="mailto:siniyusuf101@gmail.com">
+                siniyusuf101@gmail.com
+            </a>
+        </p>
+
+        <p>
+            GitHub:
+            <a href="https://github.com/HAFSAYUSUF" target="_blank">
+                github.com/HAFSAYUSUF
+            </a>
+        </p>
+
+        <p>
+            LinkedIn:
+            <a href="https://linkedin.com/in/hafsa-yusuf" target="_blank">
+                linkedin.com/in/hafsa-yusuf
+            </a>
+        </p>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Hafsa Y | Portfolio Website
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const fadeElements = document.querySelectorAll(".fade");
+
+        function showOnScroll(){
+
+            fadeElements.forEach(element => {
+
+                const position = element.getBoundingClientRect().top;
+
+                const screenPosition = window.innerHeight / 1.2;
+
+                if(position < screenPosition){
+
+                    element.classList.add("show");
+
+                }
+
+            });
+
+        }
+
+        window.addEventListener("scroll",showOnScroll);
+
+        showOnScroll();
+
+    </script>
+
+</body>
+
+</html>
